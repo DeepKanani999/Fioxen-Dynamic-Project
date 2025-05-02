@@ -3,14 +3,195 @@ import PageBanner from "@/src/components/PageBanner";
 import TestimoinalSlider from "@/src/components/Slider/TestimonialSlider";
 import Layout from "@/src/layouts/Layout";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const About = () => {
+  const [showBar, setShowBar] = useState(false);
+
+  useEffect(() => {
+    let lastScrollTop = 0;
+
+    const handleScroll = () => {
+      const st = window.scrollY || document.documentElement.scrollTop;
+      const isScrollingDown = st > lastScrollTop;
+      lastScrollTop = st <= 0 ? 0 : st;
+
+      if (isScrollingDown && window.innerWidth >= 768) {
+        setShowBar(true);
+      } else {
+        setShowBar(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleCall = () => {
+    window.location.href = "tel:+917779096777"; // Replace with your number
+  };
+
+  const handleLocation = () => {
+    window.open("https://maps.app.goo.gl/DV8NxwoPHecb7eh4A", "_blank");
+  };
+
+  const handleWhatsApp = () => {
+    window.open("https://wa.me/917779096777", "_blank"); // Replace with your number
+  };
+
+  const handleMail = () => {
+    window.location.href = "mailto:info@plixon.in"; // Replace with your email
+  };
+
+  const handleFacebook = () => {
+    window.open("https://facebook.com/yourprofile", "_blank");
+  };
+
+  const handleInstagram = () => {
+    window.open("https://instagram.com/yourprofile", "_blank");
+  };
+
+  const handleLinkedIn = () => {
+    window.open("https://linkedin.com/in/yourprofile", "_blank");
+  };
+
+  const handleShare = async () => {
+    try {
+      if (navigator.share) {
+        await navigator.share({
+          title: "Check this out!",
+          text: "Have a look at this amazing website.",
+          url: window.location.href,
+        });
+      } else {
+        alert("Sharing is not supported on this browser.");
+      }
+    } catch (error) {
+      console.error("Share failed:", error);
+    }
+  };
+
   return (
     <Layout>
       <PageBanner title={"About us"} />
 
       {/*====== Start Features Section ======*/}
       <section className="features-area">
+        <div
+          className={`floating-social-bar ${showBar ? "visible" : ""}`}
+          style={{
+            position: "fixed",
+            bottom: 10,
+            left: "50%",
+            transform: `translate(-50%, ${showBar ? "0%" : "100%"})`,
+            width: "50%",
+            backgroundColor: "#fff",
+            zIndex: 9999,
+            justifyContent: "center",
+            alignItems: "center",
+            transition: "transform 0.3s ease-in-out",
+            borderRadius: "10px 10px 10px 10px",
+            boxShadow: "0 -2px 10px rgba(0, 0, 0, 0.2)",
+          }}
+        >
+          <div
+            className="d-none d-md-flex row"
+            style={{
+              marginBottom: "10px",
+              marginTop: "10px",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <div className="row">
+              <div className="col-auto">
+                <button className="social-main-btn" onClick={handleCall}>
+                  <img
+                    src="assets/images/icons/call.webp"
+                    alt="Call"
+                    style={{ height: "25px", width: "25px", marginRight: 10 }}
+                  />
+                  Call Us
+                </button>
+              </div>
+              <div className="col-auto">
+                <button className="social-main-btn" onClick={handleLocation}>
+                  <img
+                    src="assets/images/icons/g-map.png"
+                    alt="Location"
+                    style={{ height: "30px", width: "30px", marginRight: 10 }}
+                  />
+                  Location
+                </button>
+              </div>
+              <div className="col-auto">
+                <button className="social-main-btn" onClick={handleWhatsApp}>
+                  <img
+                    src="assets/images/icons/whatsapp.png"
+                    alt="WhatsApp"
+                    style={{ height: "30px", width: "30px", marginRight: 10 }}
+                  />
+                  WhatsApp
+                </button>
+              </div>
+              <div className="col-auto">
+                <button className="social-main-btn" onClick={handleMail}>
+                  <img
+                    src="assets/images/icons/gmail.png"
+                    alt="Mail"
+                    style={{ height: "25px", width: "25px", marginRight: 10 }}
+                  />
+                  Mail
+                </button>
+              </div>
+              <div className="col-auto">
+                <button
+                  className="social-rounded-btn"
+                  onClick={handleFacebook}
+                  style={{
+                    padding: "8px",
+                    backgroundColor: "#3A559F",
+                    marginRight: "10px",
+                  }}
+                >
+                  <img src="assets/images/icons/facebook.png" alt="Facebook" />
+                </button>
+                <button
+                  className="social-rounded-btn"
+                  onClick={handleInstagram}
+                  style={{
+                    padding: "8px",
+                    backgroundColor: "#D03B98",
+                    marginRight: "10px",
+                  }}
+                >
+                  <img
+                    src="assets/images/icons/instagram.png"
+                    alt="Instagram"
+                  />
+                </button>
+                <button
+                  className="social-rounded-btn"
+                  onClick={handleLinkedIn}
+                  style={{
+                    padding: "8px",
+                    backgroundColor: "#0B63BD",
+                    marginRight: "10px",
+                  }}
+                >
+                  <img src="assets/images/icons/Linkedin.png" alt="LinkedIn" />
+                </button>
+                <button
+                  className="social-rounded-btn"
+                  onClick={handleShare}
+                  style={{ padding: "8px", backgroundColor: "#00ADFF" }}
+                >
+                  <img src="assets/images/icons/share.png" alt="Share" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="features-wrapper-three pt-110">
           <div className="container">
             <div className="row justify-content-center">
@@ -33,12 +214,13 @@ const About = () => {
                   <div className="content">
                     <h3 className="title">User Friendly</h3>
                     <p>
-                      Congue men porttitor blandit erat to loborti lacinia
-                      sapien pretium disenty
+                      Our TVs are built to be easy to use, with simple
+                      navigation and quick access to your favorite apps and
+                      features.
                     </p>
-                    <Link className="btn-link icon-btn" href="/how-work">
+                    {/* <Link className="btn-link icon-btn" href="/how-work">
                       More Details
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
               </div>
@@ -53,12 +235,12 @@ const About = () => {
                   <div className="content">
                     <h3 className="title">Daily Offers</h3>
                     <p>
-                      Congue men porttitor blandit erat to loborti lacinia
-                      sapien pretium disenty
+                      We offer regular deals so you can enjoy high-quality TVs
+                      at competitive prices without sacrificing performance.
                     </p>
-                    <Link className="btn-link icon-btn" href="/how-work">
+                    {/* <Link className="btn-link icon-btn" href="/how-work">
                       More Details
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
               </div>
@@ -73,12 +255,12 @@ const About = () => {
                   <div className="content">
                     <h3 className="title">Quick Search</h3>
                     <p>
-                      Congue men porttitor blandit erat to loborti lacinia
-                      sapien pretium disenty
+                      Quickly find the right TV for your needs using smart
+                      filters and easy search tools on our platform.
                     </p>
-                    <Link className="btn-link icon-btn" href="/how-work">
+                    {/* <Link className="btn-link icon-btn" href="/how-work">
                       More Details
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
               </div>
@@ -93,12 +275,12 @@ const About = () => {
                   <div className="content">
                     <h3 className="title">Live Support</h3>
                     <p>
-                      Congue men porttitor blandit erat to loborti lacinia
-                      sapien pretium disenty
+                      Our support team is always ready to help with product
+                      questions, setup, or service-related queries.
                     </p>
-                    <Link className="btn-link icon-btn" href="/how-work">
+                    {/* <Link className="btn-link icon-btn" href="/how-work">
                       More Details
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
               </div>
@@ -115,7 +297,7 @@ const About = () => {
               <div className="col-lg-6">
                 <div className="features-img wow fadeInLeft">
                   <img
-                    src="assets/images/features/features-1.jpg"
+                    src="/assets/images/details-images/product-detail-4.jpg"
                     alt="Features Image"
                   />
                 </div>
