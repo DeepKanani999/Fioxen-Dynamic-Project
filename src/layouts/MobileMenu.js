@@ -13,7 +13,7 @@ const MobileMenu = () => {
       value === activeMenu ? { display: "block" } : { display: "none" };
   return (
     <header className="header-area header-area-one d-xl-none">
-      <div className="header-top">
+      {/* <div className="header-top">
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-4">
@@ -84,7 +84,7 @@ const MobileMenu = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="header-navigation sticky breakpoint-on">
         <div className="container-fluid">
           <div className="primary-menu">
@@ -92,7 +92,7 @@ const MobileMenu = () => {
               <div className="col-lg-2 col-5">
                 <div className="site-branding">
                   <Link className="brand-logo" href="/">
-                    <img src="assets/images/logo/logo-1.png" alt="Brand Logo" />
+                    <img src="assets/images/logo/logo-2.png" alt="Brand Logo" />
                   </Link>
                 </div>
               </div>
@@ -106,9 +106,9 @@ const MobileMenu = () => {
                   </div>
                   <nav className="main-menu">
                     <ul>
-                      <li className="menu-item has-children">
+                      <li className="menu-item">
                         <Link href="/">Home</Link>
-                        <ul className="sub-menu" style={activeLi("Home")}>
+                        {/* <ul className="sub-menu" style={activeLi("Home")}>
                           <Home />
                         </ul>
                         <span
@@ -116,10 +116,10 @@ const MobileMenu = () => {
                           onClick={() => activeMenuSet("Home")}
                         >
                           <i className="ti-arrow-down"></i>
-                        </span>
+                        </span> */}
                       </li>
                       <About />
-                      <li className="menu-item has-children">
+                      {/* <li className="menu-item has-children">
                         <a href="#">Listings</a>
                         <ul className="sub-menu" style={activeLi("Listings")}>
                           <Listing />
@@ -130,10 +130,10 @@ const MobileMenu = () => {
                         >
                           <i className="ti-arrow-down"></i>
                         </span>
-                      </li>
-                      <li className="menu-item has-children">
-                        <a href="#">Pages</a>
-                        <ul className="sub-menu" style={activeLi("Pages")}>
+                      </li> */}
+                      <li className="menu-item ">
+                        <a href="/products">Products</a>
+                        {/* <ul className="sub-menu" style={activeLi("Pages")}>
                           <Pages />
                         </ul>
                         <span
@@ -141,9 +141,9 @@ const MobileMenu = () => {
                           onClick={() => activeMenuSet("Pages")}
                         >
                           <i className="ti-arrow-down"></i>
-                        </span>
+                        </span> */}
                       </li>
-                      <li className="menu-item has-children">
+                      {/* <li className="menu-item has-children">
                         <a href="#">Article</a>
                         <ul className="sub-menu" style={activeLi("Article")}>
                           <Blog />
@@ -154,11 +154,11 @@ const MobileMenu = () => {
                         >
                           <i className="ti-arrow-down"></i>
                         </span>
-                      </li>
+                      </li> */}
                       <Contact />
                       <li className="nav-btn">
-                        <Link className="main-btn icon-btn" href="/add-listing">
-                          Add Listing
+                        <Link className="main-btn" href="#">
+                        Find Retailers
                         </Link>
                       </li>
                     </ul>

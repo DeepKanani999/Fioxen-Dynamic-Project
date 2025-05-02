@@ -3,6 +3,7 @@ import React from "react";
 import { About, Blog, Contact, Home, Listing, Pages } from "../Menu";
 
 const Header1 = () => {
+  console.log("H1")
   return (
     <header className="header-area header-area-one d-none d-xl-block">
       <div className="header-top">
@@ -84,7 +85,7 @@ const Header1 = () => {
               <div className="col-lg-2 col-5">
                 <div className="site-branding">
                   <Link className="brand-logo" href="/">
-                    <img src="assets/images/logo/logo-1.png" alt="Brand Logo" />
+                    <img src="assets/images/logo/logo-2.png" alt="Brand Logo" />
                   </Link>
                 </div>
               </div>

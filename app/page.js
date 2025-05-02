@@ -10,14 +10,16 @@ import {
 import Link from "next/link";
 import { useState } from "react";
 import Slider from "react-slick";
+import HomeScreen from "./HomePage/page";
 
 const Index = () => {
   const [video, setVideo] = useState(false);
   return (
-    <Layout>
-      {video && <VideoPopup close={setVideo} />}
+    <>
+      {/* {video && <VideoPopup close={setVideo} />} */}
+      <HomeScreen />
       {/* <!--====== Start Hero Section ======--> */}
-      <section className="hero-area">
+      {/* <section className="hero-area">
         <div className="hero-wrapper-one">
           <div className="container">
             <div className="row">
@@ -76,10 +78,10 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* <!--====== End Hero Section ======--> */}
       {/* <!--====== Start Category Section ======--> */}
-      <section className="category-area">
+      {/* <section className="category-area">
         <div className="container">
           <div className="category-wrapper-one wow fadeInDown">
             <div className="row no-gutters">
@@ -164,10 +166,10 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* <!--====== End Category Section ======--> */}
       {/* <!--====== Start Listing Section ======--> */}
-      <section className="listing-grid-area pt-115 pb-75">
+      {/* <section className="listing-grid-area pt-115 pb-75">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-8">
@@ -606,10 +608,10 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* <!--====== End Listing Section ======--> */}
       {/* <!--====== Start offer Section ======--> */}
-      <section className="cta-area">
+      {/* <section className="cta-area">
         <div
           className="cta-wrapper-one bg_cover"
           style={{ backgroundImage: `url(assets/images/bg/cta-bg-1.jpg)` }}
@@ -628,10 +630,10 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* <!--====== End offer Section ======--> */}
       {/* <!--====== Start Features Section ======--> */}
-      <section className="features-area">
+      {/* <section className="features-area">
         <div className="features-wrapper-one pt-120">
           <div className="container">
             <div className="row">
@@ -706,10 +708,10 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* <!--====== End Features Section ======--> */}
       {/* <!--====== Start Place Section ======--> */}
-      <section className="place-area pt-115 pb-110">
+      {/* <section className="place-area pt-115 pb-110">
         <div className="container-fluid place-container">
           <div className="row justify-content-center">
             <div className="col-lg-8">
@@ -795,10 +797,10 @@ const Index = () => {
             </div>
           </Slider>
         </div>
-      </section>
+      </section> */}
       {/* <!--====== End Place Section ======--> */}
       {/* <!--====== Start Download Section ======--> */}
-      <section className="download-app">
+      {/* <section className="download-app">
         <div className="download-wrapper-one pt-115">
           <div className="container">
             <div className="row">
@@ -886,10 +888,10 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/*<!--====== End Download Section ======--> */}
       {/* <!--====== Start Popular Listing Section ======--> */}
-      <section className="listing-grid-area pt-75 pb-110">
+      {/* <section className="listing-grid-area pt-75 pb-110">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-8">
@@ -1144,10 +1146,10 @@ const Index = () => {
             </div>
           </Slider>
         </div>
-      </section>
+      </section> */}
       {/* <!--====== End Popular Listing Section ======--> */}
       {/* <!--====== Start Intro Video Section ======--> */}
-      <section className="intro-video">
+      {/* <section className="intro-video">
         <div
           className="intro-wrapper-one bg_cover pt-115"
           style={{ backgroundImage: `url(assets/images/bg/video-bg-1.jpg)` }}
@@ -1188,10 +1190,10 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* <!--====== End Intro Video Section ======--> */}
       {/* <!--====== Start Newsletter Section ======--> */}
-      <section className="newsletter-area">
+      {/* <section className="newsletter-area">
         <div className="container">
           <div
             className="newsletter-wrapper newsletter-wrapper-one bg_cover"
@@ -1228,10 +1230,10 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* <!--====== End Newsletter Section ======--> */}
       {/* <!--====== Start Client Section ======--> */}
-      <div className="client-area pt-120">
+      {/* <div className="client-area pt-120">
         <div className="client-wrapper-one pb-120">
           <div className="container">
             <Slider
@@ -1276,10 +1278,10 @@ const Index = () => {
             </Slider>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* <!--====== End Client Section ======--> */}
       {/* <!--====== Start Blog Section ======--> */}
-      <section className="blog-area pt-115 pb-120">
+      {/* <section className="blog-area pt-115 pb-120">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-6">
@@ -1430,9 +1432,9 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* <!--====== End Blog Section ======--> */}
-    </Layout>
+    </>
   );
 };
 export default Index;
